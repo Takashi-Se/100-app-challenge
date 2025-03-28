@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>おみくじアプリ</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #d9534f;
+        }
+        
+        .omikuji-box {
+            margin: 30px 0;
+            padding: 20px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .result {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+            min-height: 36px;
+        }
+        
+        button {
+            background-color: #d9534f;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #c9302c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>おみくじアプリ</h1>
+        
+        <div class="omikuji-box">
+            <p>下のボタンをクリックして、今日の運勢を占ってみましょう！</p>
+            <div class="result" id="result"></div>
+            <button id="drawButton">おみくじを引く</button>
+        </div>
+    </div>
+
+    <script>
+        // おみくじの結果一覧
+        const fortunes = [
+            "大吉 - とても素晴らしい一日になるでしょう！",
+            "中吉 - 良いことがありそうです。",
+            "小吉 - 穏やかな一日になりそうです。",
+            "吉 - 平凡な一日ですが、小さな幸せがあります。",
+            "末吉 - 少し注意が必要ですが、大丈夫です。",
+            "凶 - 今日は慎重に行動しましょう。",
+            "大凶 - 危険な目に遭うかも。外出は控えめに。"
+        ];
+        
+        // DOMの取得
+        const resultElement = document.getElementById('result');
+        const drawButton = document.getElementById('drawButton');
+        
+        // ボタンクリック時の処理
+        drawButton.addEventListener('click', function() {
+            // くじを振る演出（テキストを消して...）
+            resultElement.textContent = "くじを振っています...";
+            
+            // 0.5秒後に結果を表示
+            setTimeout(function() {
+                // ランダムにおみくじの結果を選ぶ
+                const randomIndex = Math.floor(Math.random() * fortunes.length);
+                const fortune = fortunes[randomIndex];
+                
+                // 結果を表示
+                resultElement.textContent = fortune;
+                
+                // 結果に応じて色を変える
+                if (fortune.includes("大吉")) {
+                    resultElement.style.color = "#d4af37"; // ゴールド
+                } else if (fortune.includes("凶")) {
+                    resultElement.style.color = "#d9534f"; // 赤
+                } else {
+                    resultElement.style.color = "#5cb85c"; // 緑
+                }
+            }, 500);
+        });
+    </script>
+</body>
+</html>

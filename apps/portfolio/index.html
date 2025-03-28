@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#works">Works</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main>
+        <!-- 自己紹介セクション -->
+        <section id="about" class="section">
+            <h1>About Me</h1>
+            <div class="about-content">
+                <img src="images/about-bg.jpg" alt="Takashi Se" class="profile-image">
+                <div class="about-text">
+                    <h2>Takashi Se</h2>
+                    <p>AIを活用したアプリ開発者として、#100アプリチャレンジに挑戦中です。ChatGPTやClaudeなどの最新のAI技術を活用しながら、効率的かつ革新的なアプリケーション開発に取り組んでいます。</p>
+                    <p>これまでに計算機、ToDoアプリ、天気アプリ、家計簿など、実用的なアプリケーションを開発。各プロジェクトを通じて、AIとプログラミングの融合による新しい可能性を追求しています。</p>
+                    <p>開発の過程や学びを発信しながら、技術コミュニティとの交流を通じて成長を続けています。温かい応援や建設的なアドバイスをいただきながら、より良いアプリケーション開発を目指しています。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- スキルセクション -->
+        <section id="skills" class="section">
+            <h1>Skills</h1>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <h3>HTML/CSS</h3>
+                    <p>基本的なウェブサイトの構築</p>
+                </div>
+                <div class="skill-item">
+                    <h3>JavaScript</h3>
+                    <p>インタラクティブな機能の実装</p>
+                </div>
+                <!-- 他のスキルを追加 -->
+            </div>
+        </section>
+
+        <!-- 作品紹介セクション -->
+        <section id="works" class="section">
+            <h1>Works</h1>
+            <div class="works-grid">
+                <div class="work-item">
+                    <img src="work1.jpg" alt="作品1">
+                    <h3>Project 1</h3>
+                    <p>プロジェクトの説明</p>
+                </div>
+                <!-- 他の作品を追加 -->
+            </div>
+        </section>
+
+        <!-- ソーシャルメディアセクション -->
+        <section id="social" class="section">
+            <h1>Social Media</h1>
+            <div class="social-links">
+                <a href="https://twitter.com/senotaka2922" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <i class="fab fa-twitter"></i>
+                    <span>@senotaka2922</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- コンタクトセクション -->
+        <section id="contact" class="section">
+            <h1>Contact</h1>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer>
+        <p>&copy; 2024 Your Name. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
